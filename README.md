@@ -4,7 +4,7 @@
 
 > Ruby is a wonderful programming language that was designed for programmer productivity. It comes feature-packed with numerous inbuilt classes and methods to make programming enjoyable for developers.
 >
-> This project aims to use some of ruby's inbuilt methods to build a css linter which will 
+> This project aims to use some of ruby's inbuilt methods to build a css linter.
 
 ## Built With
 
