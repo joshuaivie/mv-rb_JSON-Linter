@@ -1,10 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# CSS Linter
+# JSON Linter
 
 > Ruby is a wonderful programming language that was designed for programmer productivity. It comes feature-packed with numerous inbuilt classes and methods to make programming enjoyable for developers.
 >
-> This project aims to use some of ruby's inbuilt methods to build a css linter.
+> This project aims to use some of ruby's inbuilt methods to build a json linter.
 
 ## Built With
 
