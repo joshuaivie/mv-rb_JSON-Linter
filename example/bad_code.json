@@ -1,4 +1,13 @@
 {
-  "example": {
-      "title": "This is an example"
+  "openObject": {
+      "noComma": "This is an example"
+      "trailingComma": [1, 2, 3, 4,],
+      "leadingZero": {"example": 01},
+      "unterminatedFraction": {"example": 1.},
+      "noColon" "example",
+      "hexNotation" : 0x2a,
+      "duplicatedKey" : "string1",
+      "duplicatedKey" : "string2",
+      "doubleQuotePropertyKeys" : {'foo': 1},
+      "openArray" : [1,2,3,4,5,
 }
