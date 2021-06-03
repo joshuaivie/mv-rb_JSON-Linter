@@ -19,6 +19,10 @@ begin
       exit
     else
       puts LinterText::SUCCESFUL_READ.colorize(:green)
+      if file.wrong_file_type
+        puts LinterText::WRONG_FILE_TYPE.colorize(:red)
+        exit
+      end
     end
   end
 
