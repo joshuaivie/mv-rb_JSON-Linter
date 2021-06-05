@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'colorize'
 require_relative '../lib/modules/linter_text'
+require_relative '../lib/modules/text_format'
 require_relative '../lib/file_reader'
 
 begin
@@ -12,7 +13,7 @@ begin
     exit
   end
 
-  def fetch_file(file_path)
+  def analyze_file(file_path)
     file = FileReader.new(file_path)
     if file.error
       puts LinterText::BAD_PATH.colorize(:red)
@@ -22,6 +23,9 @@ begin
       if file.wrong_file_type
         puts LinterText::WRONG_FILE_TYPE.colorize(:red)
         exit
+      elsif file.is_empty
+        puts LinterText::EMPTY_FILE.colorize(:red)
+        exit
       end
     end
   end
@@ -30,7 +34,7 @@ begin
     puts LinterText::EXIT_MESSAGE.colorize(:green)
   end
 
-  fetch_file(file_path)
+  analyze_file(file_path)
 rescue Interrupt
   system('stty -echoctl')
   puts LinterText::INTERRUPT_MESSAGE
