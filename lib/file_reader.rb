@@ -1,5 +1,5 @@
 class FileReader
-  attr_reader :file_path, :wrong_file_type, :is_empty, :file_content, :file_size, :error
+  attr_reader :read_error, :wrong_file_type, :is_empty, :file_path, :file_content, :file_size
 
   def initialize(file_path)
     @file_path = file_path
@@ -12,6 +12,6 @@ class FileReader
       @wrong_file_type = true
     end
   rescue StandardError => e
-    @error = e
+    @read_error = e
   end
 end
