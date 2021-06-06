@@ -34,8 +34,8 @@ begin
 
     file_tester = FileTester.new(file)
     errors = file_tester.run_tests
-    # if file_tester.error_count.zero?
-    #   puts
+    puts errors unless file_tester.error_count.zero?
+    puts file_tester.test_summary
   end
 
   # Handle exit gracefully
