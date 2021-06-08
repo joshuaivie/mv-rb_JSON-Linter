@@ -6,18 +6,23 @@ class FileTester
     @error_location = []
     @error_classifiaction = []
     @possible_resolution = []
-    @error_count = 2
+    @error_count = 0
     @error_array = []
   end
 
   def run_tests
-    'Thank you Father'
+    test_results = {}
+    test_results['errors'] = @error_array
+    test_results['summary'] = test_summary
+    test_results
   end
+
+  private
 
   def test_summary
     file_summary = '1 file'
     error_summary = if error_count.zero?
-                      "#{error_count} offenses".green
+                      'no offenses'.green
                     elsif error_count == 1
                       "#{error_count} offense".red
                     else

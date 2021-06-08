@@ -33,9 +33,9 @@ begin
     end
 
     file_tester = FileTester.new(file)
-    errors = file_tester.run_tests
-    puts errors unless file_tester.error_count.zero?
-    puts file_tester.test_summary
+    test_results = file_tester.run_tests
+    puts test_results['errors'] unless file_tester.error_count.zero?
+    puts test_results['summary']
   end
 
   # Handle exit gracefully
