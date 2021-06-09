@@ -7,6 +7,10 @@ class String
     "\e[3m#{self}\e[23m"
   end
 
+  def underline
+    "\e[4m#{self}\e[0m"
+  end
+  
   def black
     "\e[30m#{self}\e[0m"
   end
