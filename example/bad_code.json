@@ -3,6 +3,7 @@
       "noComma": "This is an example"
       "trailingComma": [1, 2, 3, 4,],
       "leadingZero": {"example": 01},
+      
       "unterminatedFraction": {"example": 1.},
       "noColon" "example",
       "hexNotation" : 0x2a,

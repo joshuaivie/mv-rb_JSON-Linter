@@ -16,7 +16,7 @@ class FileTester
     @file_size = file.file_size
     @file_content = file.file_content
     @file_name = file.file_split[1]
-    @file_location = file.file_split[0].index('./') ? file.file_split[0].gsub(%r{./}, '') : file.file_split[0]
+    @file_location = file.file_split[0].delete_prefix('./')
   end
 
   def run_tests
@@ -24,6 +24,7 @@ class FileTester
 
     # run individual tests
     end_with_new_line_test
+    empty_line_test
 
     # compile all errors
     compile_errors
@@ -38,8 +39,20 @@ class FileTester
   def compile_errors
     @error_count.times do |index|
       unit_error = "#{@error_location[index]}: #{@error_classifiaction[index]}: #{@error_details[index]}\n"
-      error_string = "#{@error_line[index].to_s.italic}\n"
-      @error_array << unit_error.concat(error_string)
+      error_string = @error_line[index].lstrip == '' ? '' : @error_line[index].to_s.italic.to_s
+      @error_array << unit_error.concat(error_string, "\n\n")
+    end
+  end
+
+  def empty_line_test
+    @file_content.each_with_index do |line, line_index|
+      next unless line.lstrip == ''
+
+      @error_count += 1
+      @error_line << line
+      @error_location << "#{@file_location.concat('/', @file_name).to_s.blue}:#{line_index}:#{line.size}"
+      @error_classifiaction << JSONRules::EMPTYLINEERROR[0]
+      @error_details << JSONRules::EMPTYLINEERROR[1]
     end
   end
 
