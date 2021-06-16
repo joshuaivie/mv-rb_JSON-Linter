@@ -1,7 +1,7 @@
 {
   "openObject": {
       "noComma": "This is an example"
-      "trailingComma": [1, 2, 3, 4,],
+      "trailingComma": [1, 2, 3, 4,]
       "leadingZero": {"example": 01},
       
       "unterminatedFraction": {"example": 1.},
