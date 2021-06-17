@@ -24,9 +24,11 @@ class FileTester
     test_results = {}
 
     # run individual tests
-    end_with_new_line_test
-    empty_line_test
-    balanced_parenthesis_test
+    # empty_line_test
+    array_test
+    indentation_test
+    # balanced_parenthesis_test
+    # end_with_new_line_test
 
     # compile all errors
     compile_errors
@@ -41,6 +43,13 @@ class FileTester
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/MethodLength
+
+  def array_test
+    array_of_arrays = []
+    string = @file_content.join
+    # p string
+  end
+
   def balanced_parenthesis_test
     parethesis_stack = [], parethesis_location_stack = [], line_count = 1, char_location = 0, string_index = 0
     escaped_loop = false
@@ -87,6 +96,30 @@ class FileTester
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/PerceivedComplexity
   # rubocop:enable Metrics/MethodLength
+
+  def indentation_test
+    string_array = @file_content
+    indentation_level = 0
+
+    string_array.each_with_index do |line, index|
+      expected_indent = ' ' * indentation_level
+      actual_indent = line[0, indentation_level]
+      next_value = line[indentation_level]
+
+      location = "#{@file_reporting_location}:#{index + 1}:1"
+
+      if next_value == ' ' || expected_indent != actual_indent
+        log_error(line.lstrip, location, JSONRules::IMPROPERINDENT[0],
+                  JSONRules::IMPROPERINDENT[1])
+      end
+
+      if ['{', '['].include?(line[-2])
+        indentation_level += 2
+      elsif !string_array[index + 1].nil? && ['}', ']'].include?(string_array[index + 1].lstrip[0])
+        indentation_level -= 2
+      end
+    end
+  end
 
   def empty_line_test
     @file_content.each_with_index do |line, line_index|
