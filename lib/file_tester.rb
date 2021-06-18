@@ -25,8 +25,9 @@ class FileTester
 
     # run individual tests
     # empty_line_test
-    array_test
-    indentation_test
+    # array_test
+    # indentation_test
+    malformed_fraction_test
     # balanced_parenthesis_test
     # end_with_new_line_test
 
@@ -91,6 +92,26 @@ class FileTester
     location = "#{@file_reporting_location}:#{parethesis_location_stack[-1]}"
     log_error(parethesis_stack[-1], location, JSONRules::OPENPARENTHESIS[0],
               JSONRules::OPENPARENTHESIS[1])
+  end
+
+  def malformed_fraction_test
+    string_array = @file_content.join.chars
+    line_counter = 1
+
+    string_array.each_with_index do |char, index|
+      line_counter += 1 if char == "\n"
+      location = "#{@file_reporting_location}:#{line_counter}:#{index + 1}"
+
+      next unless ['.'].include?(char)
+
+      previous_is_number = string_array[index - 1].match(/\A\d+\z/)
+      next_is_number = !string_array[index + 1].nil? && string_array[index + 1].match(/\A\d+\z/)
+
+      next unless previous_is_number && !next_is_number || !previous_is_number && next_is_number
+
+      log_error(@file_content[line_counter - 1].lstrip, location, JSONRules::MALFORMEDFRACTION[0],
+                JSONRules::MALFORMEDFRACTION[1])
+    end
   end
 
   # rubocop:enable Metrics/CyclomaticComplexity

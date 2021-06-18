@@ -6,7 +6,7 @@
     "trailingComma" : [1, 2, 3, "four", 5, {"number": 6}, [7]],
     "leadingZero": {"example": 01},
     
-    "unterminatedFraction": {"example": 1.},
+    "unterminatedFraction": {"example": .1},
     "noColon" "example",
     "duplicatedKey" : "string1",
     "duplicatedKey" : "string2",
