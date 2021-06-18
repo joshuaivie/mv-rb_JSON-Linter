@@ -24,12 +24,12 @@ class FileTester
     test_results = {}
 
     # run individual tests
-    # empty_line_test
-    # array_test
-    # indentation_test
+    empty_line_test
+    indentation_test
     malformed_fraction_test
-    # balanced_parenthesis_test
-    # end_with_new_line_test
+    leading_zero_test
+    balanced_parenthesis_test
+    end_with_new_line_test
 
     # compile all errors
     compile_errors
@@ -44,12 +44,6 @@ class FileTester
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/MethodLength
-
-  def array_test
-    array_of_arrays = []
-    string = @file_content.join
-    # p string
-  end
 
   def balanced_parenthesis_test
     parethesis_stack = [], parethesis_location_stack = [], line_count = 1, char_location = 0, string_index = 0
@@ -111,6 +105,23 @@ class FileTester
 
       log_error(@file_content[line_counter - 1].lstrip, location, JSONRules::MALFORMEDFRACTION[0],
                 JSONRules::MALFORMEDFRACTION[1])
+    end
+  end
+
+  def leading_zero_test
+    string_array = @file_content.join.chars
+    line_counter = 1
+
+    string_array.each_with_index do |char, index|
+      line_counter += 1 if char == "\n"
+      location = "#{@file_reporting_location}:#{line_counter}:#{index + 1}"
+
+      next unless ['0'].include?(char)
+
+      next unless !string_array[index + 1].nil? && string_array[index + 1].match(/\A\d+\z/)
+
+      log_error(@file_content[line_counter - 1].lstrip, location, JSONRules::LEADINGZERO[0],
+                JSONRules::LEADINGZERO[1])
     end
   end
 

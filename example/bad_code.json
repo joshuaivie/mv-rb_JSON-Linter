@@ -11,5 +11,5 @@
     "duplicatedKey" : "string1",
     "duplicatedKey" : "string2",
     "doubleQuotePropertyKeys" : {'foo': 1},
-    "openArray" : [1,2,3,4,5,
-}
+    "openArray" : [1,2,3,4,5,]
+  ]
