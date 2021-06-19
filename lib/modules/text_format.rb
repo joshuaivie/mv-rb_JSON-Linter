@@ -10,7 +10,7 @@ class String
   def underline
     "\e[4m#{self}\e[0m"
   end
-  
+
   def black
     "\e[30m#{self}\e[0m"
   end

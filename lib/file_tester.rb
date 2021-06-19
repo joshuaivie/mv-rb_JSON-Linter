@@ -1,18 +1,16 @@
 require_relative './modules/rules_json'
 
+# rubocop:disable Metrics/ClassLength
 class FileTester
   attr_reader :error_count
 
   def initialize(file)
-    # error variables
     @error_count = 0
     @error_array = []
     @error_details = []
     @error_location = []
     @error_line = []
     @error_classifiaction = []
-
-    # file variables
     @file_size = file.file_size
     @file_content = file.file_content
     @file_name = file.file_split[1]
@@ -23,7 +21,6 @@ class FileTester
   def run_tests
     test_results = {}
 
-    # run individual tests
     empty_line_test
     indentation_test
     malformed_fraction_test
@@ -44,7 +41,6 @@ class FileTester
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/PerceivedComplexity
   # rubocop:disable Metrics/MethodLength
-
   def balanced_parenthesis_test
     parethesis_stack = []
     parethesis_location_stack = []
@@ -130,7 +126,6 @@ class FileTester
                 JSONRules::LEADINGZERO[1])
     end
   end
-
   # rubocop:enable Metrics/CyclomaticComplexity
   # rubocop:enable Metrics/PerceivedComplexity
   # rubocop:enable Metrics/MethodLength
@@ -204,3 +199,4 @@ class FileTester
     "\n#{file_summary} inspected, #{error_summary} detected"
   end
 end
+# rubocop:enable Metrics/ClassLength
