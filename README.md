@@ -16,15 +16,12 @@
 
 **This JSON linter** checks for the following errors/warnings:<br>
 
-1. Check for trailing spaces
-2. Check for the wrong indentation
-3. Check for missing/unexpected tags i.e. '( )', '[ ]', and '{ }'
-4. Check missing/unexpected end
-5. Check empty line error
-6. Check class names for CamelCase format
-7. Check module names for CamelCase format
-8. Check line length
-9. Check space before methods
+1. Check empty line error
+2. Check for missing/unexpected tags i.e. '( )', '[ ]', and '{ }'
+3. Check for the wrong indentation
+4. Check for the malformed fractions
+5. Check for the leading zeros
+6. Check new line at end of JSON
 
 #### Below you can see good, bad and empty JSON files and their test results on the console
 
@@ -54,7 +51,7 @@
 ```
 
 Console output
-<img src="./doc/img/good_test.png" alt="" style="width: 100%;">
+<img src="./doc/img/good_code.png" alt="" style="width: 100%;">
 
 <br/>
 
@@ -77,11 +74,11 @@ Console output
 ```
 
 Console output
-<img src="./doc/img/bad_test.png" alt="" style="width: 100%;">
+<img src="./doc/img/bad_code.png" alt="" style="width: 100%;">
 
 <br/>
 
-The empty file shows a warning to the user!👐
+**Empty JSON file shows a warning to the user!**
 
 ```JSON
 # Empty JSON File
@@ -92,7 +89,8 @@ The empty file shows a warning to the user!👐
 ```
 
 Console output
-<img src="./doc/img/empty_test.png" alt="" style="width: 100%;">
+</br>
+<img src="./doc/img/empty_code.png" alt="" style="width: 100%;">
 
 <br/>
 
