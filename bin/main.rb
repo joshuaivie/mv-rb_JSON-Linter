@@ -10,6 +10,7 @@ begin
   # Make sure file path is given
   if file_path.nil?
     puts LinterText::NO_PATH.red
+    puts LinterText::HOWTOPROVIDEPATH
     sleep(2)
     exit
   end
