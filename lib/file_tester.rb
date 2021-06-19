@@ -46,7 +46,11 @@ class FileTester
   # rubocop:disable Metrics/MethodLength
 
   def balanced_parenthesis_test
-    parethesis_stack = [], parethesis_location_stack = [], line_count = 1, char_location = 0, string_index = 0
+    parethesis_stack = []
+    parethesis_location_stack = []
+    line_count = 1
+    char_location = 0
+    string_index = 0
     escaped_loop = false
 
     string_array = @file_content.join.chars
@@ -118,7 +122,9 @@ class FileTester
 
       next unless ['0'].include?(char)
 
-      next unless !string_array[index + 1].nil? && string_array[index + 1].match(/\A\d+\z/)
+      next_is_number = !string_array[index + 1].nil? && string_array[index + 1].match(/\A\d+\z/)
+      previous_is_number = string_array[index - 1].match(/\A\d+\z/)
+      next unless next_is_number && !previous_is_number
 
       log_error(@file_content[line_counter - 1].lstrip, location, JSONRules::LEADINGZERO[0],
                 JSONRules::LEADINGZERO[1])
