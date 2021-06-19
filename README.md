@@ -10,6 +10,106 @@
 >
 > This project aims to use some of Ruby's inbuilt methods to build a JSON linter. The project will continue to evolve and be updated. I hope you find it helpful.
 
+<br/><br/>
+
+## Linter Description📄
+
+**This JSON linter** checks for the following errors/warnings:<br>
+
+1. Check for trailing spaces
+2. Check for the wrong indentation
+3. Check for missing/unexpected tags i.e. '( )', '[ ]', and '{ }'
+4. Check missing/unexpected end
+5. Check empty line error
+6. Check class names for CamelCase format
+7. Check module names for CamelCase format
+8. Check line length
+9. Check space before methods
+
+#### Below you can see good, bad and empty JSON files and their test results on the console
+
+<br/>
+
+**Well formed JSON passes the test successfully!**
+
+```JSON
+# Well Formed JSON
+{
+  "firstName": "John",
+  "lastName": "Snow",
+  "age": 25,
+  "children": [],
+  "spouse": null,
+  "address": {
+    "street": "7504 Taylor Drive",
+    "city": "New York City",
+  },
+  "phoneNumbers": [
+    {
+      "type": "mobile",
+      "number": "212 555-3346"
+    }
+  ]
+}
+```
+
+Console output
+<img src="./doc/img/good_test.png" alt="" style="width: 100%;">
+
+<br/>
+
+**Badly formed JSON fails the test**
+
+```JSON
+# Badly formed JSON
+{
+  "openObject": {
+  "improperIndent": "string 0"
+    "leadingZero": {"example": 01},
+
+    "unterminatedFraction": {"example": .1},
+    "openObject": {
+      "street": "7504 Taylor Drive",
+      "city": "New York City",
+      "state": "New York",
+      "postalCode": "11238"
+  ]
+```
+
+Console output
+<img src="./doc/img/bad_test.png" alt="" style="width: 100%;">
+
+<br/>
+
+The empty file shows a warning to the user!👐
+
+```JSON
+# Empty JSON File
+
+
+
+
+```
+
+Console output
+<img src="./doc/img/empty_test.png" alt="" style="width: 100%;">
+
+<br/>
+
+## Content
+
+- [Built With](#built-with)
+- [Live Demo](#live-demo)
+- [Getting started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Author](#author)
+- [Contributing](#contributing)
+- [Show your support](#show-your-support)
+- [License](#license)
+
 ## Built With
 
 - Ruby
@@ -40,7 +140,7 @@ To get a local copy up and running, follow these simple example steps.
 - Run the following command in your terminal
 
 ```console
-git clone https://github.com/joshuaivie/mv-rb_CSS-Linter/
+git clone https://github.com/joshuaivie/mv-rb_JSON-Linter/
 ```
 
 ### Usage
@@ -57,7 +157,7 @@ ruby enumerable.rb
 This project uses the ruby spec gem for testing.
 
 ```console
-gem install rspec &&  cd mv-rb_Enumerable-Methods && rspec
+gem install rspec &&  cd mv-rb_JSON-Linter && rspec
 ```
 
 ## Author
