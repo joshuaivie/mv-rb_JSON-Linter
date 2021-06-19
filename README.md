@@ -115,7 +115,7 @@ Console output
 
 ## Live Demo
 
-You can check out the live demo [here]()
+You can check out the live demo [here](https://replit.com/join/qkpymnmloi-joshuaivie)
 
 ## Getting Started
 
@@ -144,10 +144,10 @@ git clone https://github.com/joshuaivie/mv-rb_JSON-Linter/
 ### Usage
 
 - Ensure you're in the directory in which you've set up the project
-- Run the following command
+- Run the following command replacing the relative file path with the path of the file you wish to test
 
 ```console
-ruby enumerable.rb
+bin/main.rb [./relative/file/path]
 ```
 
 ## Testing
@@ -170,7 +170,7 @@ gem install rspec &&  cd mv-rb_JSON-Linter && rspec
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/joshuaivie/mv-rb_JSON-Linter/issues).
 
 ## Show your support
 
@@ -178,4 +178,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](./LICENSE.md) licensed.
