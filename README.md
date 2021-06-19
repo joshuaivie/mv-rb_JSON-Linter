@@ -2,13 +2,18 @@
 
 # JSON Linter
 
-> Ruby is a wonderful programming language that was designed for programmer productivity. It comes feature-packed with numerous inbuilt classes and methods to make programming enjoyable for developers.
+> Ruby is a beautiful programming language that was designed for programmer productivity. It comes feature-packed with numerous inbuilt classes and methods to make programming enjoyable for developers.
 >
-> This project aims to use some of ruby's inbuilt methods to build a json linter.
+> According to Wikipedia, JSON(JavaScript Object Notation) is an open standard file format and data interchange format. It uses human-readable text to store and transmit data objects. JSON files consist of attribute-value pairs and arrays (or other serializable values).
+>
+> In today's development world, JSON is one of the popular data formats. Although it was derived from JavaScript, it a language-independent format. Many languages come with an inbuilt JSON parser. It is also a light-weight format and, it is human-readable.
+>
+> This project aims to use some of Ruby's inbuilt methods to build a JSON linter. The project will continue to evolve and be updated. I hope you find it helpful.
 
 ## Built With
 
 - Ruby
+- RSpec
 
 ## Live Demo
 
@@ -31,7 +36,7 @@ To get a local copy up and running, follow these simple example steps.
 
 ### Setup
 
-- Open your terminal and navigate to location in which you would like to setup the project.
+- Open your terminal and navigate to the location in which you would like to setup your copy of the project.
 - Run the following command in your terminal
 
 ```console
