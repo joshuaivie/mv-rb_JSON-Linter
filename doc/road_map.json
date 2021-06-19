@@ -1,0 +1,9 @@
+{
+    "noComma": "This is an example"
+    "trailingComma" : [1, 2, 3, "four", 5, {"number": 6}, [7]],
+    "noColon" "example",
+    "duplicatedKey" : "string1",
+    "duplicatedKey" : "string2",
+    "doubleQuotePropertyKeys" : {'foo': 1},
+    "openArray" : [1,2,3,4,5,
+}
