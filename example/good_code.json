@@ -1,0 +1,23 @@
+{
+  "firstName": "John",
+  "lastName": "Snow",
+  "age": 25,
+  "children": [],
+  "spouse": null,
+  "address": {
+    "street": "7504 Taylor Drive",
+    "city": "New York City",
+    "state": "New York",
+    "postalCode": "11238"
+  },
+  "phoneNumbers": [
+    {
+      "type": "mobile",
+      "number": "212 555-3346"
+    },
+    {
+      "type": "fax",
+      "number": "646 555-4567"
+    }
+  ]
+}

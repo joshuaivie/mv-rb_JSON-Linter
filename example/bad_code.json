@@ -1,0 +1,13 @@
+
+{
+  "openObject": {
+  "improperIndent": "string 0"
+    "leadingZero": {"example": 01},
+    
+    "unterminatedFraction": {"example": .1},
+    "openObject": {
+      "street": "7504 Taylor Drive",
+      "city": "New York City",
+      "state": "New York",
+      "postalCode": "11238"
+  ]
